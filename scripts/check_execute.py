@@ -70,7 +70,7 @@ def run_py(path: Path, timeout: int) -> tuple[str, list]:
             proc = subprocess.run(
                 [sys.executable, "-m", "marimo", "export", "ipynb",
                  "--include-outputs", str(path), "-o", str(dest), "-f"],
-                capture_output=True, text=True, timeout=timeout, cwd=ROOT,
+                capture_output=True, text=True, encoding="utf-8", timeout=timeout, cwd=ROOT,
             )
         except subprocess.TimeoutExpired:
             return "timeout", [(-1, "Timeout", f"exceeded {timeout}s")]
