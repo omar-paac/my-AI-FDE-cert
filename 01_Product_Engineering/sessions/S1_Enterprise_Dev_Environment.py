@@ -1,7 +1,7 @@
 # /// script
 # requires-python = ">=3.12"
 # dependencies = [
-#     "marimo>=0.23.3",
+#     "marimo==0.23.16",
 #     "python-dotenv>=1.2",
 #     "litellm>=1.90",
 # ]
@@ -9,7 +9,7 @@
 
 import marimo
 
-__generated_with = "0.25.1"
+__generated_with = "0.23.16"
 app = marimo.App(width="medium", app_title="Enterprise Dev Environment")
 
 
