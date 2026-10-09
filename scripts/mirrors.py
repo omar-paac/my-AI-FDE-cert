@@ -100,6 +100,7 @@ def export(nb: Path) -> str:
         ],
         capture_output=True,
         text=True,
+        encoding="utf-8",
         cwd=ROOT,
     )
     if result.returncode != 0:

@@ -65,6 +65,18 @@ END;
 """
 
 
+_last = 0.0
+
+
+def _now() -> float:
+    """time.time(), but strictly increasing. Windows' clock ticks every ~15 ms,
+    so writes and recalls in the same tick would tie and LRU eviction would be
+    arbitrary."""
+    global _last
+    _last = max(time.time(), _last + 1e-6)
+    return _last
+
+
 @dataclass
 class Memory:
     id: int
@@ -91,7 +103,7 @@ class MemoryStore:
     def remember(self, kind: str, content: str, subject: str = "") -> int:
         cur = self.db.execute(
             "INSERT INTO memories (kind, subject, content, created) VALUES (?,?,?,?)",
-            (kind, subject, content, time.time()),
+            (kind, subject, content, _now()),
         )
         self.db.commit()
         return cur.lastrowid
@@ -142,7 +154,7 @@ class MemoryStore:
             self.db.execute(
                 f"UPDATE memories SET accessed = ? WHERE id IN "
                 f"({','.join('?' * len(out))})",
-                [time.time(), *[m.id for m in out]],
+                [_now(), *[m.id for m in out]],
             )
             self.db.commit()
         return out

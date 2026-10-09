@@ -1,7 +1,7 @@
 # /// script
 # requires-python = ">=3.12"
 # dependencies = [
-#     "marimo>=0.23.3",
+#     "marimo==0.23.16",
 #     "python-dotenv>=1.2",
 #     "litellm>=1.90",
 # ]
@@ -9,7 +9,7 @@
 
 import marimo
 
-__generated_with = "0.25.1"
+__generated_with = "0.23.16"
 app = marimo.App(width="medium", app_title="Enterprise Dev Environment")
 
 
@@ -418,9 +418,13 @@ def _(mo):
     **1 — Start it, and look before you leap.**
 
     ```bash
-    cd ../challenge
+    cd 01_Product_Engineering/challenge    # from the repository root
     claude
     ```
+
+    The directory matters: Claude Code reads the `CLAUDE.md` in the folder it
+    starts in, and the challenge's is the one with the rules you are about to
+    edit. Started from the repository root it picks up a different file.
 
     Press `Shift+Tab` until you are in **plan mode**, then ask for something
     real:

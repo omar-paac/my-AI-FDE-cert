@@ -196,5 +196,8 @@ def check_egress(hosts=DEFAULT_HOSTS, *, timeout: float = 6.0,
 
     order = {h: i for i, (h, _) in enumerate(hosts)}
     report.probes.sort(key=lambda p: order.get(p.host, 999))
-    report.proxy_env = {k: os.environ[k] for k in PROXY_VARS if os.environ.get(k)}
+    # Windows env names are case-insensitive: skip the lowercase twins there,
+    # or one variable is counted twice.
+    report.proxy_env = {k: os.environ[k] for k in PROXY_VARS
+                        if os.environ.get(k) and not (os.name == "nt" and k.islower())}
     return report
