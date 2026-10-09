@@ -6,7 +6,7 @@
   template. That is on purpose.
 -->
 
-**Department:** <!-- your answer here -->
+**Department:** Purchasing
 
 **Working title:** <!-- your answer here -->
 
@@ -16,23 +16,23 @@
 
 **Who has it?** One real role, not a department.
 
-<!-- your answer here -->
+Opportunistic Purchasing
 
 **What are they trying to do?**
 
-<!-- your answer here -->
+Sourcing part numbers in the open market to restock. Identify vendors, send emails, wait for responses, and follow up. 
 
 **How do they handle it today?**
 
-<!-- your answer here -->
+Based on a purchase request, we source for the right vendor that matches our part number condition (New, New Surplus, Factory New) and Quantity. Once identified, we send an RFQ email, wait for the response, and log this into our ERP system.  
 
 **What does that cost — time, money, risk, or relationships?**
 
-<!-- your answer here -->
+Time, but also money: the faster we can get those parts in stock, the better positioned we will be to quote and sell. Customer Service level decreases.
 
 **The problem in one sentence. No solution in it.**
 
-<!-- your answer here -->
+Time consuming sourcing process
 
 ---
 
@@ -40,11 +40,11 @@
 
 **What does the new world look like for that person?**
 
-<!-- your answer here -->
+The person creates a Purchase Request and gets a notification once a Vendor RFQ is received for her/his evaluation.
 
 **How would the firm measure it? Which numbers should move?**
 
-<!-- your answer here -->
+Opportunistic Inventory Increase
 
 ---
 
@@ -52,15 +52,15 @@
 
 **Your solution in one sentence.**
 
-<!-- your answer here -->
+An autonomous agent that will help us navigate the sourcing process
 
 **Input → Output.** Be specific enough that someone could build it wrong and you
 would notice.
 
 | | |
 | --- | --- |
-| **In** | <!-- your answer here --> |
-| **Out** | <!-- your answer here --> |
+| **In** | Part Number, Condition, Quantity |
+| **Out** | A vendor RFQ that can be converted into a PO |
 
 ---
 
